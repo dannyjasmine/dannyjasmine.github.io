@@ -32,6 +32,12 @@ li{
 	margin: 0em 1em 0em 1em;
 	padding: 0em 1em 0em 1em;
 }
+li.over{
+	background-color: red;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	line-height: 3em;
+}
 
 a{
 	text-decoration: none;
@@ -55,6 +61,7 @@ a{
 }
 
 #t1, #t3{
+	position: absolute;
 	vertical-align: top;
 	width: 5%;
 	font-size: 4.5em;

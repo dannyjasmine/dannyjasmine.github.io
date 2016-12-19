@@ -12,14 +12,14 @@
     <h1>
         <em>老爷子</em> 的生日Party
     </h1>
-    <nav id="navigation">
-    <ul>
-      <li><a href="intro.html">介绍</a></li>
-      <li><a href="photos.html">照片</a></li>
-      <li><a href="videos.html">视频</a></li>
-      <li><a href="wishes.html">祝福</a></li>
-      <li><a href="fortunes.html">红包</a></li>
-    </ul>
+    <nav id="nav">
+      <ul>
+        <li><a href="intro.html">介绍</a></li>
+        <li><a href="photos.html">照片</a></li>
+        <li><a href="videos.html">视频</a></li>
+        <li><a href="wishes.html">祝福</a></li>
+        <li><a href="fortunes.html">红包</a></li>
+      </ul>
     </nav>
     </header>
 
@@ -71,6 +71,16 @@
       2016年10月20日，于息县一桥英伦小镇，正午12时，众子女、(外)孙儿孙女
     </footer>
 
-    <script src="scripts/player.js"></script>
+    <script src="jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script>
+      $(function(){
+        $("#t1").animate({left: "200px"}, 2000).animate({left: "2px"}, 2000);      
+        $("#t3").animate({right: "200px"}, 2000).animate({right: "2px"}, 2000);
+        $("#nav li").hover(function(){
+          $(this).toggleClass("over");
+        });
+      })
+        
+    </script>
   </body>
 </html>
