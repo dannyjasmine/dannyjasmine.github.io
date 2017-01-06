@@ -88,11 +88,6 @@
         function showError(err) {
           alert(err.code + ", " + err.message);
         }
-        var options = {
-          enableHighAccuracy: true,
-          timeout: 300000,
-          maximumAge: 3600000
-        };
         if(navigator.geolocation){
           navigator.geolocation.getCurrentPosition(showPosition, showError, options);
         }
