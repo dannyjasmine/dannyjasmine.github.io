@@ -89,7 +89,7 @@
           alert(err.code + ", " + err.message);
         }
         if(navigator.geolocation){
-          navigator.geolocation.getCurrentPosition(showPosition, showError, options);
+          navigator.geolocation.getCurrentPosition(showPosition, showError);
         }
       })
         
