@@ -79,6 +79,23 @@
         $("#nav li").hover(function(){
           $(this).toggleClass("over");
         });
+
+        function showPosition(pos) {
+          var latitude = pos.coords.latitude;
+          var longitude = pos.coords.longitude;
+          alert("我的位置：北纬 " + latitude + ", 东经 " + longitude);
+        }
+        function showError(err) {
+          alert(err.code + ", " + err.message);
+        }
+        var options = {
+          enableHighAccuracy: true,
+          timeout: 300000,
+          maximumAge: 3600000
+        };
+        if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(showPosition, showError, options);
+        }
       })
         
     </script>
