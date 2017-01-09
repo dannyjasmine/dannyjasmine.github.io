@@ -35,7 +35,8 @@
     </div>
 
     <div id="main" class="tc">
-      <h2>今天， 一个重大的日子</h2>
+      <h2>今天， 一个重大的日子<p id="number"></p>
+      </h2>
       <video id="party" src="images/birthday.mp4" controls muted width="200" height="300">
         <track kind=subtitles src=text.vtt srclang=en label="English">
       </video>
@@ -90,6 +91,11 @@
         }
         if(navigator.geolocation){
           navigator.geolocation.getCurrentPosition(showPosition, showError, {timeout: 300000});
+        }
+
+        var worker = new Worker('worker.js');
+        worker.onmessage = function (e) {
+          document.getElementById('number').textContent = e.data;
         }
       })
         
