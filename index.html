@@ -72,6 +72,14 @@
       2016年10月20日，于息县一桥英伦小镇，正午12时，众子女、(外)孙儿孙女
     </footer>
 
+    <canvas id="canvas" width="600" height="600" style="border: 1px solid blue;">
+      Your browser does not support canvas element.
+    </canvas>
+    <br>
+    <button onclick="startup();">Initialize</button>
+    <br>
+    Log: <pre id="log" style="border: 1px solid #ccc;"></pre>
+
     <script src="jquery-3.1.1.min.js" type="text/javascript"></script>
     <script>
       $(function(){
@@ -96,6 +104,47 @@
         var worker = new Worker('worker.js');
         worker.onmessage = function (e) {
           document.getElementById('number').textContent = e.data;
+        }
+
+        var log = document.getElementById('log');
+        var ongoingTouches = [];
+        function startup() {
+          var elem = document.getElementsByTagName('canvas')[0];
+          elem.addEventListener('touchstart', handleStart, false);
+          elem.addEventListener('touchend', handleEnd, false);
+          elem.addEventListener('touchcancel', handleCancel, false);
+          elem.addEventListener('touchmove', handleMove, false);
+          log.textContent = 'initialized';
+        }
+
+        function handleStart(e) {
+          //e.preventDefault();
+          alert('touchstart');
+          var elem = document.getElementsByTagName('canvas')[0];
+          var ctx = elem.getContext('2d');
+          var touches = e.changedTouches;
+          for (var i = 0; i < touches.length; i++) {
+            alert("touchstart: " + i + " ...");
+            ongoingTouches.push(copyTouch(touches[i]));
+            var color = colorForTouch(touches[i]);
+            ctx.beginPath();
+            ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);
+            ctx.fillStyle = color;
+            ctx.fill();
+            alert('touchstart: ' + i + '.');
+          }
+        }
+
+        function handleEnd() {
+          
+        }
+
+        function handleCancel() {
+          
+        }
+
+        function handleMove() {
+          
         }
       })
         
