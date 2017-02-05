@@ -59,8 +59,8 @@
             ongoingTouches.push(copyTouch(touches[i]));
             var color = colorForTouch(touches[i]);
             ctx.beginPath();
-            ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);
-            ctx.fillStyle = 'red';
+            ctx.arc(touches[i].pageX, touches[i].pageY, 20, 0, 2 * Math.PI, false);
+            ctx.fillStyle = 'blue';
             ctx.fill();
             log.textContent += ('touchstart: ' + i + '.');
           }
