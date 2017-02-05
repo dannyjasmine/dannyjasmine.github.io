@@ -32,6 +32,10 @@
         // }
 
         var log = document.getElementById('log');
+        var init = document.getElementById('init');
+        init.onclick = function () {
+          startup();
+        };
         var ongoingTouches = [];
         function startup() {
           var elem = document.getElementsByTagName('canvas')[0];
@@ -145,7 +149,7 @@
       Your browser does not support canvas element.
     </canvas>
     <br>
-    <button onclick="startup();">Initialize</button>
+    <button id="init">Initialize</button>
     <br>
     Log: <pre id="log" style="border: 1px solid #ccc;"></pre>
 
