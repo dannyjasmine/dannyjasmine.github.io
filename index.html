@@ -47,7 +47,7 @@
         }
 
         function handleStart(e) {
-          //e.preventDefault();
+          e.preventDefault();
           log.textContent += ('touchstart');
           var elem = document.getElementsByTagName('canvas')[0];
           var ctx = elem.getContext('2d');
