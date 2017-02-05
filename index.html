@@ -101,10 +101,10 @@
           navigator.geolocation.getCurrentPosition(showPosition, showError, {timeout: 300000});
         }
 
-        var worker = new Worker('worker.js');
-        worker.onmessage = function (e) {
-          document.getElementById('number').textContent = e.data;
-        }
+        // var worker = new Worker('worker.js');
+        // worker.onmessage = function (e) {
+        //   document.getElementById('number').textContent = e.data;
+        // }
 
         var log = document.getElementById('log');
         var ongoingTouches = [];
