@@ -51,6 +51,8 @@
           log.textContent += ('touchstart');
           var elem = document.getElementsByTagName('canvas')[0];
           var ctx = elem.getContext('2d');
+          ctx.fillStyle = 'black';
+          ctx.fillRect(0, 0, 600, 600);
           var touches = e.changedTouches;
           for (var i = 0; i < touches.length; i++) {
             log.textContent += ("touchstart: " + i + " ...");
