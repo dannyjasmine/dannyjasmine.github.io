@@ -53,7 +53,7 @@
           var ctx = elem.getContext('2d');
           var touches = e.changedTouches;
           for (var i = 0; i < touches.length; i++) {
-            log.textContent = "touchstart: " + i + " ...";
+            log("touchstart: " + i + " ...");
             ongoingTouches.push(copyTouch(touches[i]));
             var color = colorForTouch(touches[i]);
             ctx.beginPath();
