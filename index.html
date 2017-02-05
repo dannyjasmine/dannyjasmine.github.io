@@ -89,17 +89,17 @@
           $(this).toggleClass("over");
         });
 
-        function showPosition(pos) {
-          var latitude = pos.coords.latitude;
-          var longitude = pos.coords.longitude;
-          alert("我的位置：北纬 " + latitude + ", 东经 " + longitude);
-        }
-        function showError(err) {
-          alert(err.code + ", " + err.message);
-        }
-        if(navigator.geolocation){
-          navigator.geolocation.getCurrentPosition(showPosition, showError, {timeout: 300000});
-        }
+        // function showPosition(pos) {
+        //   var latitude = pos.coords.latitude;
+        //   var longitude = pos.coords.longitude;
+        //   alert("我的位置：北纬 " + latitude + ", 东经 " + longitude);
+        // }
+        // function showError(err) {
+        //   alert(err.code + ", " + err.message);
+        // }
+        // if(navigator.geolocation){
+        //   navigator.geolocation.getCurrentPosition(showPosition, showError, {timeout: 300000});
+        // }
 
         // var worker = new Worker('worker.js');
         // worker.onmessage = function (e) {
