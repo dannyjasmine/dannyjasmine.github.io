@@ -43,12 +43,12 @@
           elem.addEventListener('touchend', handleEnd, false);
           elem.addEventListener('touchcancel', handleCancel, false);
           elem.addEventListener('touchmove', handleMove, false);
-          log.textContent = 'initialized';
+          log('initialized');
         }
 
         function handleStart(e) {
           //e.preventDefault();
-          log.textContent = 'touchstart';
+          log('touchstart');
           var elem = document.getElementsByTagName('canvas')[0];
           var ctx = elem.getContext('2d');
           var touches = e.changedTouches;
@@ -60,7 +60,7 @@
             ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);
             ctx.fillStyle = color;
             ctx.fill();
-            log.textContent = 'touchstart: ' + i + '.';
+            log('touchstart: ' + i + '.');
           }
         }
 
@@ -76,6 +76,27 @@
           
         }
       })
+
+      function copyTouch(touch) {
+        return {identifier: touch.identifier, pageX: touch.pageX, pageY: touch.pageY};
+      }
+
+      function colorForTouch(touch) {
+        var r = touch.identifier % 16;
+        var g = Math.floor(touch.identifier / 3) % 16;
+        var b = Math.floor(touch.identifier / 7) % 16;
+        r = r.toString(16); // make it a hex digit
+        g = g.toString(16); // make it a hex digit
+        b = b.toString(16); // make it a hex digit
+        var color = "#" + r + g + b;
+        log('color for touch with identifier ' + touch.identifier + " = " + color);
+        return color;
+      }
+
+      function log(msg) {
+        var p = document.getElementById('log');
+        p.innerHTML = msg + '\n' + p.innerHTML;
+      }
         
     </script>
   </head>
