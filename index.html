@@ -4,6 +4,24 @@
   <head>
     <meta charset="utf-8">
     <title>生日Party</title>
+    <style type="text/css">
+      .garden {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border: 5px solid #ccc;
+        border-radius: 10px;
+      }
+      .ball {
+        position: absolute;
+        top: 90px;
+        left: 90px;
+        width: 20px;
+        height: 20px;
+        background-color: green;
+        border-radius: 50%;
+      }
+    </style>
     <!-- <link rel="stylesheet" href="birthday.css"> -->
 
   </head>
@@ -14,7 +32,7 @@
     <br>
     <img id="background2" src="images/Birthday2.jpg" alt="2nd background image">
     <img id="background4" src="images/Birthday4.jpg" alt="4th background image">
-     -->
+
     <header>
     <h1>
         <em>老爷子</em> 的生日Party
@@ -39,16 +57,16 @@
     <div id="main" class="tc">
       <h2>今天， 一个重大的日子<p id="number"></p>
       </h2>
-<!--       <video id="party" src="images/birthday.mp4" controls muted width="200" height="300">
+      <video id="party" src="images/birthday.mp4" controls muted width="200" height="300">
         <track kind=subtitles src=text.vtt srclang=en label="English">
-      </video> -->
+      </video>
       <div id="description">
       <p>今天是农历贰零壹陆年九月贰拾日，老爷子的陆拾大寿生日。众多小家伙们聚在了一起，首席大厨周彩琴，经过一上午的精心烹煮，香飘飘的菜已经准备出锅。寿星正在停港田，准备来主持生日宴。</p>
       经典时刻<br>
-<!--       <img src="images/ba.jpg" alt="丹丹的照片">
+      <img src="images/ba.jpg" alt="丹丹的照片">
       <img src="images/cut.jpg" alt="康康的照片">
       <img src="images/food.jpg" alt="帅豪的照片">
-      <img src="images/cake4.jpg" alt="祥祥的照片"> -->
+      <img src="images/cake4.jpg" alt="祥祥的照片">
       </div>
       <div id="request">
       送上你的祝福吧，在下面输入你的洋洋洒洒的文采之词
@@ -62,15 +80,15 @@
     </div>
 
     <div id="wishes">
-<!--     <textarea name="wishes" rows="1" cols="36"></textarea><br>
-    <input type="submit" value="送祝福">  -->
+    <textarea name="wishes" rows="1" cols="36"></textarea><br>
+    <input type="submit" value="送祝福"> 
     </div>
     <br>
 
     <footer>
       2016年10月20日，于息县一桥英伦小镇，正午12时，众子女、(外)孙儿孙女
     </footer>
-
+ -->
 
     <canvas id="canvas" width="600" height="600" style="border: 1px solid blue;">
       Your browser does not support canvas element.
@@ -81,7 +99,39 @@
     Log: <pre id="log" style="border: 1px solid #ccc;"></pre>
     <br>
 
+    <div class="garden">
+      <div class="ball"></div>
+    </div>
+    <pre class="output"></pre>
+
     <script type="text/javascript">
+
+      var ball = document.querySelector('.ball');
+      var garden = document.querySelector('.garden');
+      var output = document.querySelector('.output');
+      var max_X = garden.clientWidth - ball.clientWidth;
+      var max_Y = garden.clientWidth - ball.clientWidth;
+      function handleOrientation(e) {
+        var x = e.beta; // in degree in the range [-180, 180]
+        var y = e.gamma; // in degree in the range [-90, 90]
+        output.innerHTML = "beta : " + x + '\n';
+        output.innerHTML += 'gamma : ' + y + '\n';
+        // because we don't want to have the device upside down, we constrain the x value to the range [-90, 90]
+        if (x > 90) {
+          x = 90;
+        }
+        if (x < -90) {
+          x = -90;
+        }
+        // to make computation easier we shift the range of x and y to [0, 180]
+        x += 90;
+        y += 90;
+        // 10 is half the size of the ball
+        // It center the positioning point to the center of the ball
+        ball.style.top = (max_X*x/180 - 10) + 'px';
+        ball.style.left = (max_Y*y/180 - 10) + 'px';
+      }
+      window.addEventListener('deviceorientation', handleOrientation);
       // $(function(){
       //   $("#t1").animate({left: "200px"}, 2000).animate({left: "2px"}, 2000);      
       //   $("#t3").animate({right: "200px"}, 2000).animate({right: "2px"}, 2000);
