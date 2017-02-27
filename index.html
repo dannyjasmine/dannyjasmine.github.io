@@ -1,274 +1,542 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>生日Party</title>
-    <link media="(max-width: 800px)" rel="stylesheet" type="text/css" href="ball.css">
-    <style type="text/css">
-      @media (min-width: 800px), handheld and (orientation: portrait) {
-        #canvas {
-          display: none;
-        }
-      }
-    </style>
-    <!-- <link rel="stylesheet" href="birthday.css"> -->
+<head>
+	<meta charset="UTF-8">
+	<title>天猫首页</title>
+	<link rel="stylesheet" type="text/css" href="style/reset.css">
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+<!-- 	<script type="text/javascript">
+		window.onload = function () {
+			var xianshi = document.getElementById('welcome');
+			xianshi.onmouseover = function () {
+				var buxianshi = document.getElementById('hide');
+				buxianshi.style.display = "block";
+			};
+		};
+	</script> -->
+</head>
+<body>
+    <ul class="sidebar_right">
+    	<li>
+    		<a href=""><img src="images/cat_2.png" alt=""></a>
+    		<p id="p1" hidden>我的特权</p>
+    	</li>
+    	<li>
+    		<a href=""><img src="images/cart_2.png" alt=""><span>购物车</span></a>
+    	</li>
+    	<li>
+    		<a href=""><img src="images/asset.png" alt=""></a>
+    		<p hidden>我的资产</p>
+    	</li>
+    	<li>
+    		<a href=""><img src="images/brand_2.png" alt=""></a>
+    		<p hidden>我关注的品牌</p>
+    	</li>
+    	<li>
+    		<a href=""><img src="images/favorate_2.png" alt=""></a>
+    		<p hidden>我的收藏</p>
+    	</li>
+    	<li>
+    		<a href=""><img src="images/visited.png" alt=""></a>
+    		<p hidden>我看过的</p>
+    	</li>
+    	<li>
+    		<a href=""><img src="images/topup.png" alt=""></a>
+    		<p hidden>我要充值</p>
+    	</li>
+    	<li>
+    		<a href=""><img src="images/feedback.png" alt=""></a>
+    		<p hidden>用户反馈</p>
+    	</li>
+    	<li>
+    		<a href=""><img src="images/app_2.png" alt=""></a>
+    		<img hidden src="images/app.png" alt="">
+    	</li>
+    	<li>
+    		<a href=""><img src="images/top.png" alt=""></a>
+    		<p hidden>返回顶部</p>
+    	</li>
+    </ul>
+	<header>
+		<div class="header_top">
+			<span>喵，欢迎来天猫</span>
+			<a href="https://login.tmall.com/?spm=875.7931836/B.a2226mz.1.JMe35G&redirectURL=https%3A%2F%2Fwww.tmall.com%2F">请登录</a>
+			<a href="https://register.tmall.com/?spm=875.7931836/B.a2226mz.2.JMe35G">免费注册</a>
+			<div class="my_taobao_wrapper">
+				<a class="my_taobao" href="https://i.taobao.com/my_taobao.htm?spm=875.7931836/B.a2226mz.3.JMe35G">
+					我的淘宝
+					<b></b>					
+				</a>
+				<ul hidden>
+					<li><a href="https://trade.taobao.com/trade/itemlist/list_bought_items.htm?spm=875.7931836/B.a2226mz.4.JMe35G&t=20110530">已买到的宝贝</a></li>
+					<li><a href="https://trade.taobao.com/trade/itemlist/list_sold_items.htm?spm=875.7931836/B.a2226mz.5.JMe35G&t=20110530">已卖出的宝贝</a></li>
+				</ul>
+			</div>
+			<a class="my_brand" href="https://mybrand.tmall.com/?spm=875.7931836/B.a2226mz.7.JMe35G&scm=1048.1.1.1"> 我关注的品牌</a>
+			<a class="my_cart" href="https://cart.tmall.com/cart/myCart.htm?spm=875.7931836/B.a2226mz.8.JMe35G&from=btop">购物车 <strong>0</strong> 件</a>
+			<div class="my_favorate_wrapper">
+				<a class="my_favorate" href="https://shoucang.taobao.com/shop_collect_list.htm?spm=875.7931836/B.a2226mz.9.JMe35G&scjjc=c1">
+					收藏夹
+					<b></b>
+				</a>
+				<ul hidden>
+					<li><a href="https://shoucang.taobao.com/item_collect.htm?spm=875.7931836/B.a2226mz.10.JMe35G">收藏的宝贝</a></li>
+					<li><a href="https://shoucang.taobao.com/shop_collect_list.htm?spm=875.7931836/B.a2226mz.11.JMe35G0">收藏的店铺</a></li>
+				</ul>
+			</div>
+			<span>|</span>
+			<a class="mobile_version" href="https://pages.tmall.com/wow/portal/act/app-download?spm=875.7931836/B.a2226mz.12.JMe35G&scm=1027.1.1.1">
+				手机版
+				<i></i>
+				<img hidden src="images/app.png" alt="QR code for Tmall App">
+			</a>
+			<a href="https://www.taobao.com/?spm=875.7931836/B.a2226mz.13.JMe35G">淘宝网</a>
+			<a href="https://b.tmall.com/?spm=875.7931836/B.a2226mz.14.JMe35G">企业购</a>
+			<div class="support_wrapper">
+				<a class="support" href="">
+					商家支持
+					<b></b>
+				</a>
+				<ul hidden>				
+					<li>
+					商家：
+						<ul>
+							<li><a href="">商家中心</a></li>
+							<li><a href="">商家入驻</a></li>
+							<li><a href="">运营服务</a></li>
+							<li><a href="">商家品控</a></li>
+							<li><a href="">商家工具</a></li>
+							<li><a href="">商家规则</a></li>
+							<li><a href="">天猫智库</a></li>
+							<li><a href="">喵言喵语</a></li>
+						</ul>
+					</li>
+					<li class="help">
+					帮助：
+						<ul>
+							<li><a href="">帮助中心</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- support_wrapper end -->
+			<div class="site_nav_wrapper">
+				<a class="site_nav" href="">
+					网站导航
+					<b></b>
+				</a>
+				<ul hidden>
+					<li class="hot_recom">
+						<h2>热点推荐 Hot</h2>
+						<ul>
+							<li><a href="">天猫超市</a></li>
+							<li><a href="">喵鲜生</a></li>
+							<li class="new"><a href="">科技新品</a></li>
+							<li class="hot"><a href="">女装新品</a></li>
+							<li><a href="">酷玩街</a></li>
+							<li class="hot"><a href="">内衣新品</a></li>
+							<li><a href="">试美妆</a></li>
+							<li><a href="">运动新品</a></li>
+							<li class="hot"><a href="">时尚先生</a></li>
+							<li><a href="">精明妈咪</a></li>
+							<li class="new"><a href="">吃乐会</a></li>
+							<li><a href="">企业采购</a></li>
+							<li><a href="">会员积分</a></li>
+							<li><a href="">天猫国际</a></li>
+						</ul>
+					</li>
+					<li class="market">
+						<h2>行业市场 Market</h2>		
+						<ul>
+							<li><a href="">美妆</a></li>
+							<li><a href="">电器</a></li>
+							<li class="hot"><a href="">女装</a></li>
+							<li class="hot"><a href="">男装</a></li>
+							<li><a href="">女鞋</a></li>
+							<li><a href="">男鞋</a></li>
+							<li class="hot"><a href="">内衣</a></li>
+							<li><a href="">箱包</a></li>
+							<li><a href="">运动</a></li>
+							<li><a href="">母婴</a></li>
+							<li><a href="">家装</a></li>
+							<li><a href="">医药</a></li>
+							<li><a href="">食品</a></li>
+							<li class="new"><a href="">配饰</a></li>
+							<li><a href="">汽车</a></li>
+						</ul>
+					</li>
+					<li class="fashion_brand">
+						<h2>品牌风尚 Brand</h2>		
+						<ul>
+							<li><a href="">尚天猫</a></li>
+							<li><a href="">大牌街</a></li>
+							<li><a href="">潮牌街</a></li>
+							<li><a href="">天猫原创</a></li>
+							<li><a href="">什么牌子好</a></li>
+						</ul>
+					</li>
+					<li class="service_help">
+					    <h2>服务指南 Help</h2>    
+						<ul>
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">品质保障</a></li>
+							<li><a href="">特色服务</a></li>
+							<li><a href="">7天退换货</a></li>
+						</ul>
+					</li>
+				</ul>				
+			</div>
+			<!-- site_nav_wrapper end -->
+		</div>
+		<!-- header_top end -->
+		<div class="logo_search">
+			<img src="images/logo.png" align="Tmall logo image">
+			<div class="search_area">
+				<input type="text" placeholder="大牌新品抢先看"><button type="submit" value="search_button">搜索</button>
+				<ul>
+					<li><a href="#">针织衫女</a></li>
+					<li><a href="#">外套</a></li>
+					<li><a href="#">四件套</a></li>
+					<li><a href="#">笔记本电脑</a></li>
+					<li><a href="#">吸顶灯</a></li>
+					<li><a href="#">文胸</a></li>
+					<li><a href="#">小白鞋</a></li>
+					<li><a href="#">双肩包</a></li>
+					<li><a href="#">面膜</a></li>
+				</ul>
+			</div>
+		</div>
+		<nav>			
+			<div class="category">
+				<h2>商品分类</h2>
+				<ul>
+					<li>
+						<h4><a href="">女装 </a><a href=""> /内衣</a></h4>
+						<ul hidden>
+							<li>
+								<h3>当季流行 &gt;</h3>
+								<ul>
+									<li><a href="">2017春季新品</a></li>
+									<li><a href="">商场同款</a></li>
+									<li><a href="">气质连衣裙</a></li>
+									<li><a href="">羽绒服</a></li>
+									<li><a href="">中长款毛呢</a></li>
+									<li><a href="">百搭休闲裤</a></li>
+									<li><a href="">2017内衣新品</a></li>
+									<li><a href="">内衣商场同款</a></li>
+									<li><a href="">男士内裤</a></li>
+									<li><a href="">春夏家居服</a></li>
+									<li><a href="">无痕文胸</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>精选上装 &gt;</h3>
+								<ul>
+									<li><a href="">羽绒服</a></li>
+									<li><a href="">毛呢外褂</a></li>
+									<li><a href="">毛衣</a></li>
+									<li><a href="">针织衫</a></li>
+									<li><a href="">衬衫</a></li>
+									<li><a href="">风衣</a></li>
+									<li><a href="">短外套</a></li>
+									<li><a href="">卫衣</a></li>
+									<li><a href="">小西装</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>浪漫裙装 &gt;</h3>
+								<ul>
+									<li><a href="">连衣裙</a></li>
+									<li><a href="">蕾丝连衣裙</a></li>
+									<li><a href="">印花连衣裙</a></li>
+									<li><a href="">真丝连衣裙</a></li>
+									<li><a href="">半身裙</a></li>
+									<li><a href="">百褶裙</a></li>
+									<li><a href="">牛仔裙</a></li>
+									<li><a href="">背心裙</a></li>
+									<li><a href="">a字裙</a></li>
+									<li><a href="">棉麻连衣裙</a></li>
+									<li><a href="">蕾丝半身裙</a></li>
+									<li><a href="">包臀裙</a></li>
+									<li><a href="">长袖连衣裙</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>女士下装 &gt;</h3>
+								<ul>
+									<li><a href="">牛仔裤</a></li>
+									<li><a href="">休闲裤</a></li>
+									<li><a href="">哈伦裤</a></li>
+									<li><a href="">背带裤</a></li>
+									<li><a href="">小脚裤</a></li>
+									<li><a href="">西装裤</a></li>
+									<li><a href="">打底裤</a></li>
+									<li><a href="">阔腿裤</a></li>
+									<li><a href="">短裤</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>特色女装 &gt;</h3>
+								<ul>
+									<li><a href="">时尚气质套装</a></li>
+									<li><a href="">休闲运动套装</a></li>
+									<li><a href="">精选妈妈装</a></li>
+									<li><a href="">大码女装</a></li>
+									<li><a href="">职业套装</a></li>
+									<li><a href="">优雅旗袍</a></li>
+									<li><a href="">精致礼服</a></li>
+									<li><a href="">婚纱</a></li>
+									<li><a href="">唐装</a></li>
+									<li><a href="">小码女装</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>保暖基础 &gt;</h3>
+								<ul>
+									<li><a href="">男士保暖</a></li>
+									<li><a href="">女士保暖</a></li>
+									<li><a href="">保暖加厚加绒</a></li>
+									<li><a href="">男士内裤</a></li>
+									<li><a href="">女士内裤</a></li>
+									<li><a href="">吊带背心</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>家居服 &gt;</h3>
+								<ul>
+									<li><a href="">睡衣</a></li>
+									<li><a href="">睡衣秋款</a></li>
+									<li><a href="">睡衣冬款</a></li>
+									<li><a href="">珊瑚绒睡衣</a></li>
+									<li><a href="">情侣睡衣</a></li>
+									<li><a href="">男士睡衣</a></li>
+									<li><a href="">睡袍冬款</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>文胸塑身 &gt;</h3>
+								<ul>
+									<li><a href="">文胸</a></li>
+									<li><a href="">文胸套装</a></li>
+									<li><a href="">无钢圈</a></li>
+									<li><a href="">聚拢型</a></li>
+									<li><a href="">塑身裤</a></li>
+									<li><a href="">塑身连体衣</a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>袜类 &gt;</h3>
+								<ul>
+									<li><a href="">袜子</a></li>
+									<li><a href="">男士袜子</a></li>
+									<li><a href="">加绒丝袜</a></li>
+									<li><a href="">女士船袜</a></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="brand_logo" hidden>
+							<li><a href=""><img src="images/goelia.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/mb.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/orain.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/chuyu.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/tw.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/bershka.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/pullbear.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/bnb.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/my.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/ports.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/gain.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/mnf.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/threegun.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/aimer.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/miiow.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/realsilk.jpg" alt=""></a></li>
+							<li><a href=""><img src="images/ladywear.jpg" alt=""></a></li>
+						</ul>
+					</li>
+					<li>
+						<h4><a href="">男装 </a><a href="">/运动户外</a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">女鞋 </a><a href="">/男鞋 </a><a href="">/箱包</a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">化妆品 </a><a href="">/个人护理</a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">腕表 </a><a href="">/珠宝饰品 </a><a href="">/眼镜</a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">手机 </a><a href="">/数码</a> <a href=""> /电脑办公</a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">母婴玩具</a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">零食 </a><a href="">/进口食品</a> /茶酒<a href=""></a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">生鲜水果</a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">大家电 </a><a href="">/生活电器</a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">家具建材</a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">汽车 </a><a href="">/配件 </a><a href="">/用品</a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">家纺 </a><a href="">/家饰</a><a href="">/鲜花</a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">医药保健</a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">厨具 </a><a href="">/收纳</a> <a href="">/宠物</a></h4>
+						<ul hidden></ul>
+					</li>
+					<li>
+						<h4><a href="">图书音像</a></h4>
+						<ul hidden></ul>
+					</li>
+				</ul>
+			</div>
+			<ul>
+				<li><a href="">天猫超市<img hidden src="images/cat_up.png" alt="cat_up animation"></a></li>
+				<li><a href="">天猫国际<img hidden src="images/cat_up.png" alt="cat_up animation"></a></li>
+				<li><a href="">天猫会员<img hidden src="images/cat_up.png" alt="cat_up animation"></a></li>
+				<li><a href="">品牌街<img hidden src="images/cat_up.png" alt="cat_up animation"></a></li>
+				<li><a href="">电器城<img hidden src="images/cat_up.png" alt="cat_up animation"></a></li>
+				<li><a href="">喵鲜生<img hidden src="images/cat_up.png" alt="cat_up animation"></a></li>
+				<li><a href="">医药馆<img hidden src="images/cat_up.png" alt="cat_up animation"></a></li>
+				<li><a href="">营业厅<img hidden src="images/cat_up.png" alt="cat_up animation"></a></li>
+				<li><a href="">魅力惠<img hidden src="images/cat_up.png" alt="cat_up animation"></a></li>
+				<li><a href="">飞猪旅行<img hidden src="images/cat_up.png" alt="cat_up animation"></a></li>
+				<li><a href="">苏宁易购<img hidden src="images/cat_up.png" alt="cat_up animation"></a></li>
+			</ul>
+		</nav>
+		<!-- nav end -->
+	</header>
+	<!-- header end -->
+	<main>
+		<div class="banner_wrapper">
+			<ul>
+				<li>
+					<a href="">
+						<!-- <img src="images/slide_2.jpg" alt=""> -->
+					</a>
+					<a class="banner_sm_top" href="">
+						<strong>小米芯未来</strong>
+						<span>3.3小米和米家新品日</span>
+						<img src="images/mi.png">
+					</a>
+					<a class="banner_sm_bottom" href="">
+						<strong>彩电家装节</strong>
+						<span>订金100抵150元</span>
+						<img src="images/mi.png">
+					</a>
+				</li>
+				<li>
+					<a href=""></a>
+					<a class="banner_sm_top" href="">
+						<strong>小米芯未来</strong>
+						<span>3.3小米和米家新品日</span>
+						<img src="images/mi.png">
+					</a>
+					<a class="banner_sm_bottom" href="">
+						<strong>彩电家装节</strong>
+						<span>订金100抵150元</span>
+						<img src="images/mi.png">
+					</a>
+				</li>
+				<li>
+					<a href=""></a>
+					<a class="banner_sm_top" href="">
+						<strong>小米芯未来</strong>
+						<span>3.3小米和米家新品日</span>
+						<img src="images/mi.png">
+					</a>
+					<a class="banner_sm_bottom" href="">
+						<strong>彩电家装节</strong>
+						<span>订金100抵150元</span>
+						<img src="images/mi.png">
+					</a>
+				</li>
+				<li>
+					<a href="">	</a>
+					<a class="banner_sm_top" href="">
+						<strong>小米芯未来</strong>
+						<span>3.3小米和米家新品日</span>
+						<img src="images/mi.png">
+					</a>
+					<a class="banner_sm_bottom" href="">
+						<strong>彩电家装节</strong>
+						<span>订金100抵150元</span>
+						<img src="images/mi.png">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<!-- <img src="images/slide_2.jpg" alt=""> -->
+					</a>
+					<a class="banner_sm_top" href="">
+						<strong>小米芯未来</strong>
+						<span>3.3小米和米家新品日</span>
+						<img src="images/mi.png">
+					</a>
+					<a class="banner_sm_bottom" href="">
+						<strong>彩电家装节</strong>
+						<span>订金100抵150元</span>
+						<img src="images/mi.png">
+					</a>
+				</li>
+			</ul>
+			<div>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="login_banner">
+				<img src="images/login.png" alt="login image">
+				<p>Hi~你好!</p>
+				<a href="" class="please_login">请登录</a>
+				<a href="" class="free_register">免费注册&gt;</a>
+				<p class="return">退货保障</p>
+				<p class="loan">花呗分期</p>
+				<p class="refund">极速退款</p>
+				<a href="" class="privileges">更多特权&gt;</a>
+				<p>推荐活动</p>
+				<a href="">
+					<img src="images/tea.jpg" alt="tea promo"><br>
+					<p>青柳钱茶 </p>
+					<span> 1500积分</span>
+				</a>
+			</div>
+		</div>
+		<!-- banner_wrapper end -->
+		<div class=""></div>
+		<div></div>
+	</main>
+	<footer></footer>
 
-  </head>
-  <body>
-<!-- 
-    <img id="background1" src="images/Birthday1.jpg" alt="1st background image">
-    <img id="background3" src="images/cake2.jpg" alt="3rd background image"> 
-    <br>
-    <img id="background2" src="images/Birthday2.jpg" alt="2nd background image">
-    <img id="background4" src="images/Birthday4.jpg" alt="4th background image">
-
-    <header>
-    <h1>
-        <em>老爷子</em> 的生日Party
-    </h1>
-    <nav id="nav">
-      <ul>
-        <li><a href="intro.html">介绍</a></li>
-        <li><a href="photos.html">照片</a></li>
-        <li><a href="videos.html">视频</a></li>
-        <li><a href="wishes.html">祝福</a></li>
-        <li><a href="fortunes.html">红包</a></li>
-      </ul>
-    </nav>
-    </header>
-
-    <div id="table">
-    <div id="tr">
-    <div id="t1" class="tc">
-        寿 比 南 山
-    </div>
-
-    <div id="main" class="tc">
-      <h2>今天， 一个重大的日子<p id="number"></p>
-      </h2>
-      <video id="party" src="images/birthday.mp4" controls muted width="200" height="300">
-        <track kind=subtitles src=text.vtt srclang=en label="English">
-      </video>
-      <div id="description">
-      <p>今天是农历贰零壹陆年九月贰拾日，老爷子的陆拾大寿生日。众多小家伙们聚在了一起，首席大厨周彩琴，经过一上午的精心烹煮，香飘飘的菜已经准备出锅。寿星正在停港田，准备来主持生日宴。</p>
-      经典时刻<br>
-      <img src="images/ba.jpg" alt="丹丹的照片">
-      <img src="images/cut.jpg" alt="康康的照片">
-      <img src="images/food.jpg" alt="帅豪的照片">
-      <img src="images/cake4.jpg" alt="祥祥的照片">
-      </div>
-      <div id="request">
-      送上你的祝福吧，在下面输入你的洋洋洒洒的文采之词
-      </div>
-    </div>
-
-    <div id="t3" class="tc">
-        福如东海
-    </div>
-    </div>
-    </div>
-
-    <div id="wishes">
-    <textarea name="wishes" rows="1" cols="36"></textarea><br>
-    <input type="submit" value="送祝福"> 
-    </div>
-    <br>
-
-    <footer>
-      2016年10月20日，于息县一桥英伦小镇，正午12时，众子女、(外)孙儿孙女
-    </footer>
- -->
-
-    <canvas id="canvas" width="600" height="600" style="border: 1px solid blue;">
-      Your browser does not support canvas element.
-    </canvas>
-    <br>
-    <button id="init">Initialize</button>
-    <br>
-    Log: <pre id="log" style="border: 1px solid #ccc;"></pre>
-    <br>
-
-    <div class="garden">
-      <div class="ball"></div>
-    </div>
-    <pre class="output"></pre>
-
-    <script type="text/javascript">
-
-      var ball = document.querySelector('.ball');
-      var garden = document.querySelector('.garden');
-      var output = document.querySelector('.output');
-      var max_X = garden.clientWidth - ball.clientWidth;
-      var max_Y = garden.clientWidth - ball.clientWidth;
-      function handleOrientation(e) {
-        var x = e.beta; // in degree in the range [-180, 180]
-        var y = e.gamma; // in degree in the range [-90, 90]
-        output.innerHTML = "beta : " + x + '\n';
-        output.innerHTML += 'gamma : ' + y + '\n';
-        // because we don't want to have the device upside down, we constrain the x value to the range [-90, 90]
-        if (x > 90) {
-          x = 90;
-        }
-        if (x < -90) {
-          x = -90;
-        }
-        // to make computation easier we shift the range of x and y to [0, 180]
-        x += 90;
-        y += 90;
-        // 10 is half the size of the ball
-        // It center the positioning point to the center of the ball
-        ball.style.top = (max_X*x/180 - 10) + 'px';
-        ball.style.left = (max_Y*y/180 - 10) + 'px';
-      }
-      window.addEventListener('deviceorientation', handleOrientation);
-      // $(function(){
-      //   $("#t1").animate({left: "200px"}, 2000).animate({left: "2px"}, 2000);      
-      //   $("#t3").animate({right: "200px"}, 2000).animate({right: "2px"}, 2000);
-      //   $("#nav li").hover(function(){
-      //     $(this).toggleClass("over");
-      //   });
-
-        // function showPosition(pos) {
-        //   var latitude = pos.coords.latitude;
-        //   var longitude = pos.coords.longitude;
-        //   alert("我的位置：北纬 " + latitude + ", 东经 " + longitude);
-        // }
-        // function showError(err) {
-        //   alert(err.code + ", " + err.message);
-        // }
-        // if(navigator.geolocation){
-        //   navigator.geolocation.getCurrentPosition(showPosition, showError, {timeout: 300000});
-        // }
-
-        // var worker = new Worker('worker.js');
-        // worker.onmessage = function (e) {
-        //   document.getElementById('number').textContent = e.data;
-        // }
-
-        //var log = document.getElementById('log');
-        var init = document.getElementById('init');
-        init.onclick = function () {
-          startup();
-        };
-        
-        var ongoingTouches = [];
-        function startup() {
-          var elem = document.getElementsByTagName('canvas')[0];
-          elem.addEventListener('touchstart', handleStart, false);
-          elem.addEventListener('touchend', handleEnd, false);
-          elem.addEventListener('touchcancel', handleCancel, false);
-          elem.addEventListener('touchmove', handleMove, false);
-          log('initialized');
-        }
-
-        function handleStart(e) {
-          e.preventDefault();
-          log('touchstart');
-          var elem = document.getElementsByTagName('canvas')[0];
-          var ctx = elem.getContext('2d');
-          var touches = e.changedTouches;
-          for (var i = 0; i < touches.length; i++) {
-            log("touchstart: " + i + " ...");
-            ongoingTouches.push(copyTouch(touches[i]));
-            var color = colorForTouch(touches[i]);
-            ctx.beginPath();
-            ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);
-            ctx.fillStyle = color;
-            ctx.fill();
-            log('touchstart: ' + i + '.');
-          }
-        }
-
-        function handleMove(e) {
-          e.preventDefault();
-          var elem = document.getElementsByTagName('canvas')[0];
-          var ctx = elem.getContext('2d');
-          var touches = e.changedTouches;
-          for (var i = 0; i < touches.length; i++) {
-            var color = colorForTouch(touches[i]);
-            var idx = ongoingTouchIndexById(touches[i].identifier);
-            if (idx >= 0) {
-              log('continuing touch' + idx);
-              ctx.beginPath();
-              log('ctx.moveTo(' + ongoingTouches[idx].pageX + ', ' + ongoingTouches[idx].pageY + ');');
-              ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
-              log('ctx.lineTo(' + touches[i].pageX + ', ' + touches[i].pageY + ');');
-              ctx.lineTo(touches[i].pageX, touches[i].pageY);
-              ctx.lineWidth = 4;
-              ctx.strokeStyle = color;
-              ctx.stroke();
-              ongoingTouches.splice(idx, 1, copyTouch(touches[i])); // swap in the new touch record
-              log('.');
-            } else {
-              log('can not figure out which touch to continue');
-            }
-          }
-        }
-
-        function handleEnd(e) {
-          e.preventDefault();
-          log('touchend');
-          var elem = document.getElementsByTagName('canvas')[0];
-          var ctx = elem.getContext('2d');
-          var touches = e.changedTouches;
-          for (var i = 0; i < touches.length; i++) {
-            var color = colorForTouch(touches[i]);
-            var idx = ongoingTouchIndexById(touches[i].identifier);
-            if (idx >= 0) {
-              ctx.lineWidth = 4;
-              ctx.fillStyle = color;
-              ctx.beginPath();
-              ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
-              ctx.lineTo(touches[i].pageX, touches[i].pageY);
-              ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8);
-              ongoingTouches.splice(idx, 1); // remove it, we're done;
-            } else {
-              log('can not figure out which touch to end');
-            }
-          }
-        }
-
-        function handleCancel(e) {
-          e.preventDefault();
-          log('touchcanel');
-          var touches = e.changedTouches;
-          for (var i = 0; i < touches.length; i++) {
-            ongoingTouches[i].splice(i, 1); // remove it, we're done
-          }
-        }
-
-        function ongoingTouchIndexById(idToFind) {
-          for (var i = 0; i < ongoingTouches.length; i++) {
-            var id = ongoingTouches[i].identifier;
-            if (id == idToFind) {
-              return i; 
-            }
-          }
-          return -1;
-        }
-
-        function copyTouch(touch) {
-          return {identifier: touch.identifier, pageX: touch.pageX, pageY: touch.pageY};
-        }
-
-        function colorForTouch(touch) {
-          var r = touch.identifier % 16;
-          var g = Math.floor(touch.identifier / 3) % 16;
-          var b = Math.floor(touch.identifier / 7) % 16;
-          r = r.toString(16); // make it a hex digit
-          g = g.toString(16); // make it a hex digit
-          b = b.toString(16); // make it a hex digit
-          var color = "#" + r + g + b;
-          log('color for touch with identifier ' + touch.identifier + " = " + color);
-          return color;
-        }
-
-        function log(msg) {
-          var p = document.getElementById('log');
-          p.innerHTML = msg + '\n' + p.innerHTML;
-        }
-      // })        
-    </script>
-  </body>
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<script src="js/index.js" type="text/javascript"></script>
+</body>
 </html>
